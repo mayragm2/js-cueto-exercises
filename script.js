@@ -104,11 +104,22 @@
 //         Edad: ${edad}
 //         Ciudad: ${ciudad}`);
 
-// Activity 4 - Coercion de tipos
-console.log(0 == false)         //true
-console.log(0 === false)        //false
-console.log("" == false)        //true
-console.log(null == undefined)  //false - it is actually true
-console.log(null === undefined) //false
-console.log("5" == 5)           //true
-console.log("5" === 5)          //false
+// // Activity 4 - Coercion de tipos
+// console.log(0 == false)         //true
+// console.log(0 === false)        //false
+// console.log("" == false)        //true
+// console.log(null == undefined)  //false - it is actually true
+// console.log(null === undefined) //false
+// console.log("5" == 5)           //true
+// console.log("5" === 5)          //false
+
+// Part 2 - El usuario escribe su nombre en un formulario
+const nombreUsuario = " mmm"; // espacios en blanco
+nombreUsuario.replace(/\s+/g, '');
+console.log(nombreUsuario);
+if (nombreUsuario === "") {
+  console.log("El nombre no puede estar vacío");
+} else {
+  console.log("Bienvenido, " + nombreUsuario);
+}
+console.log(typeof nombreUsuario)
