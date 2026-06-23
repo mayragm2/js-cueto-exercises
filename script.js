@@ -1,3 +1,4 @@
+//Clase 1
 const dias = 311;
 console.log("Hola!");
 console.log("faltan", dias, "para mi cumpleaños");
@@ -23,3 +24,22 @@ console.table([
     {equipo: "Inglaterra", mundiales_ganados: 1, instancia_maxima_mundial_2022: "Cuartos de final"}
 ]);
 
+//Clase 2
+//Parte A — Predecir antes de ejecutar
+
+console.log("Predicción: String");
+console.log(typeof "Rosario");
+console.log("Predicción: Number");
+console.log(typeof 42);
+console.log("Predicción: Number");
+console.log(typeof 3.14);
+console.log("Predicción: bool");
+console.log(typeof true);
+console.log("Predicción:bool");
+console.log(typeof false);
+console.log("Predicción:undefined");
+console.log(typeof undefined);
+console.log("Predicción:object");
+console.log(typeof null);
+
+//Parte B — Declarar y verificar
