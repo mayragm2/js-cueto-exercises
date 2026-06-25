@@ -12,3 +12,6 @@ const jugadores = [
 const jugadores2goles = jugadores.filter(g => g.goles > 2); //filtra los jugadores con goles>2 del array jugadores
 
 console.log(jugadores2goles); //imprime en la consola
+
+const nombres = jugadores.map(j => j.nombre);
+console.log(nombres);
