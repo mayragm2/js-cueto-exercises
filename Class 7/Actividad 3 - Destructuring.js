@@ -13,3 +13,7 @@ console.log (nombre, goles);
 //Part B
 const {nombre: nombreJugador} = jugador;
 console.log(nombreJugador);
+
+//Part C
+jugador.camiseta = 10;
+console.log (jugador);
