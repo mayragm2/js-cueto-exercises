@@ -17,3 +17,6 @@ const jugadores2goles = jugadores.filter(g => g.goles > 2); //filtra los jugador
 
 const nombres2goles = jugadores2goles.map(j => j.nombre);
 console.log(nombres2goles);
+
+const jugadorFrancia = jugadores.find (F => F.pais === "Francia");
+console.log(jugadorFrancia);
