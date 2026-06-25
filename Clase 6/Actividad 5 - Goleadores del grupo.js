@@ -24,3 +24,9 @@ const topGoleadores = stringsGoleadores
     {console.log (`${j}`)}
 );
 
+//Parte E
+const AsistidorSilencioso = grupo 
+.filter (j => j.goles < 3)
+.sort ((a, b)=> b.asistencias-a.asistencias)
+.find (j => j.asistencias);
+console.log (`Asistidor Silencioso: ${AsistidorSilencioso.nombre} (${AsistidorSilencioso.goles} goles y ${AsistidorSilencioso.asistencias} asistencias) `);  
