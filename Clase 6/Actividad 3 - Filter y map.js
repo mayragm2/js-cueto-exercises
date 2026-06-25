@@ -14,7 +14,10 @@ const jugadores = [
 // //Parte B
 // const jugadoresNombres = jugadores.map (j => j.nombre);
 // console.log (jugadoresNombres); 
-//Parte C
-const goleadores = jugadores.filter (j=>j.goles>2);
-const nombresGoleadores = goleadores.map (j=>j.nombre);
-console.log(nombresGoleadores);
+// //Parte C
+// const goleadores = jugadores.filter (j=>j.goles>2);
+// const nombresGoleadores = goleadores.map (j=>j.nombre);
+// console.log (nombresGoleadores);
+// // Parte D
+// const primerJugadorFrancia = jugadores.find (j => j.pais === "Francia"); //If filter method were to be used in this case, it would return all france players
+// console.log (primerJugadorFrancia);
