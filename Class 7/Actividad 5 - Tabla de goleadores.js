@@ -12,6 +12,9 @@ const jugadores = [
 const ranking = jugadores.map(jugador => ({
     ...jugador, 
     promedio: Number((jugador.goles / jugador.partidos).toFixed(2))
-}));
+}))
+.filter (g => g.goles>1)
+.sort ((a, b) => b.goles-a.goles)
+.map (j => `${j.nombre} - ${j.goles} goles (${j.promedio} por partido)`);
 
 console.log (ranking);
