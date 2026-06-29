@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista"></ul>
+</body>
+<script>
+    const lista = document.getElementById("lista");
+    const grupos = ["Grupo A", "Grupo B", "Grupo C", "Grupo D", "Grupo E"];
+    const elemento = createElement("li");
+    for (let i = 0; i<(grupos.length); i++){
+        const elementos = {...grupos, elemento: elemento.createElement("li")}
+        lista.appendChild(elementos.grupos[i])
+        console.log(grupos);
+    }
+
+    
+</script>
+</html>
