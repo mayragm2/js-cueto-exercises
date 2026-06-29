@@ -34,6 +34,15 @@
 
   <script>
     let goles = 0;
+    const boton = document.getElementById ("boton-gol");
+    const marcador = document.getElementById("marcador")
+
+
+    boton.addEventListener("click",  () => {
+        goles ++;
+        marcador.innerText = goles;
+
+    });
 
     // Tu código acá:
     // 1. Seleccioná el botón (#boton-gol) y el marcador (#marcador)
