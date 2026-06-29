@@ -67,14 +67,23 @@
       const input = document.getElementById ("buscador");
       const list = document.getElementById ("lista");
       const li = list.querySelectorAll("li");
+      const sinResultados = document.getElementById("sin-resultados");
+      let counter = 0;
       input.addEventListener("input", () => {
-      let newInput = input.value.toLowerCase();
-      li.forEach(element => {
+      let counter = 0 //variable que cuenta la cantidad de items que no coinciden con la busqueda
+      let newInput = input.value.toLowerCase(); //guarda el input en una variable aparte para simplificar la declaracion if
+      li.forEach(element => { //por cada elemento de li
         //console.log (element.innerText)
-        if(element.innerText.toLowerCase().includes(newInput)){
+        if(element.innerText.toLowerCase().includes(newInput)){ //si el elemento tiene caracteres que coinciden con los de la busqueda
           element.style.display = ""
         } else {
           element.style.display = "none"
+          counter++; //contador para la cantidad de elementos que no coinciden con la busqueda
+        }
+        if (counter===li.length){ //si la cantidad de elementos que no coinciden con la busqueda es la misma que los elementos que existen, es true
+          sinResultados.style.display = "block";
+        } else { //si hay mas elementos siendo mostrados que elementos totales, no se muestra el sin resultados
+          sinResultados.style.display = "none";
         }
 
       });
