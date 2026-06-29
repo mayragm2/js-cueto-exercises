@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista"></ul>
+</body>
+<script>
+    const lista = document.getElementById("lista");
+    const grupos = ["Grupo A", "Grupo B", "Grupo C", "Grupo D", "Grupo E", "Grupo F"];
+    const elemento = 0;
+    for (let i = 0; i<(grupos.length); i++){ // mientras i sea menor a la cantidad de elementos de grupo
+        grupos[i] = {nombre: grupos[i], item: document.createElement("li")} // grupos sera igual a un objeto que contiene el string y el elemento li
+        grupos[i].item.textContent = (grupos[i].nombre);
+        lista.appendChild(grupos[i].item); //agrega al elemento de html li el item correspondiente al grupo
+        console.log(grupos); //imprime en la consola el array de grupos para debuggear
+    }
+
+    
+</script>
+</html>
