@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica 04 — Tarjetas de jugadores</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    #contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .tarjeta {
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      min-width: 180px;
+      background-color: #f9f9f9;
+    }
+
+    .tarjeta h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    .tarjeta p {
+      margin: 0.25rem 0;
+      color: #444;
+    }
+
+    /* Esta clase se agrega desde JS cuando goles > 5 */
+    .tarjeta.destacado {
+      border-color: gold;
+      background-color: #fffbe6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Goleadores del Mundial 2026</h1>
+
+  <!-- Este contenedor empieza vacío. Tu JS va a llenarlo con tarjetas. -->
+  <div id="contenedor"></div>
+
+  <script>
+    const jugadores = [
+      { nombre: "Messi",   pais: "🇦🇷 Argentina",  goles: 8  },
+      { nombre: "Haaland", pais: "🇳🇴 Noruega",    goles: 12 },
+      { nombre: "Mbappé",  pais: "🇫🇷 Francia",    goles: 5  },
+      { nombre: "Kane",    pais: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra", goles: 2  },
+    ];
+    const contenedor = document.getElementById("contenedor");
+    for (jugador of jugadores){
+        console.log(jugador);
+        jugador = {
+        ...jugador,
+        pPais:document.createElement("p"), 
+        pGoles: document.createElement("p"), 
+        h2:document.createElement ("h2"), 
+        element:document.createElement ("div")
+            
+    };  
+        if(jugador.goles>5){
+            jugador.element.classList.add ("destacado");
+        }
+        jugador.h2.textContent = jugador.nombre;
+        jugador.pPais.textContent = jugador.pais;
+        jugador.pGoles.textContent = jugador.goles;
+
+        contenedor.appendChild(jugador.element);
+        jugador.element.appendChild (jugador.h2);
+        jugador.element.appendChild (jugador.pGoles);
+        jugador.element.appendChild (jugador.pPais);
+        jugador.element.classList.add("tarjeta");
+        console.log(jugador);
+    }
+
+  </script>
+</body>
+</html>
