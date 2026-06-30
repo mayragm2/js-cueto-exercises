@@ -30,13 +30,27 @@
     }
   </style>
 </head>
-<body>
+<body id="body">
   <h1>Mi página</h1>
   <p>Probá el botón para cambiar entre modo claro y oscuro.</p>
 
-  <button id="toggle-tema">🌙 Modo oscuro</button>
+  <button id="toggle-tema">🌙 Modo Oscuro</button>
 
   <script>
+    const toggle = document.getElementById("toggle-tema");
+    const body = document.body;
+
+
+    toggle.addEventListener("click", () => {
+        let esOscuro = body.classList.toggle("oscuro");
+        console.log("click");
+        if (esOscuro === true  ){
+            toggle.textContent = "☀️ Modo Claro"
+        } else {
+            toggle.textContent = "🌙 Modo Oscuro"
+        }
+        
+    })
     // Tu código acá:
     // 1. Seleccioná el botón (#toggle-tema)
     // 2. Al hacer clic, alterná la clase "oscuro" en document.body
