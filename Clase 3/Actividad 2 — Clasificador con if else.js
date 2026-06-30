@@ -1,11 +1,11 @@
-const goles = 0;
+const goles = 20;
 
-if (goles>=20){
-    console.log("Goleador");
-} else if (goles<20 && goles>=10){
-    console.log ("Habitual");
-} else if (goles<10 && goles>=1){
+if (goles<1){
+    console.log("No convirtio");
+} else if (goles<10){
     console.log ("Ocasional");
+} else if (goles<20){
+    console.log ("Habitual");
 } else {
-    console.log ("No convirtió");
+    console.log ("Goleador");
 }
