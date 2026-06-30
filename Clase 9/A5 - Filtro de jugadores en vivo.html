@@ -48,8 +48,29 @@
       "Cristiano Ronaldo",
       "Kylian Mbappé",
     ];
+    const lista = document.getElementById("lista");
+    const input = document.getElementById("buscador");
+    const datos = jugadores.map(nombre => {
+        const li = document.createElement("li");
+        li.textContent = nombre;
+        lista.appendChild(li);
+        return { nombre, li };
+    })
 
-    // Tu código acá:
+    console.log(datos);
+
+    input.addEventListener ("input", () => {
+        for (let i = 0; i<datos.length; i++){
+        const nombreJugador = datos[i].nombre.toLowerCase();
+        const búsqueda = input.value.toLowerCase();
+        if (nombreJugador.includes(búsqueda)){
+            datos[i].li.style.display = "block";
+        } else {
+            datos[i].li.style.display = "none";
+        }
+        }})
+    
+        // Tu código acá:
     // 1. Renderizá la lista: un <li> por jugador, agregado al #lista
     // 2. Escuchá el evento "input" del #buscador
     // 3. Mostrá/ocultá cada <li> según si coincide con lo tipeado (sin importar mayúsculas)
