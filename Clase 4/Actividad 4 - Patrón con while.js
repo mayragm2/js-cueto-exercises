@@ -6,17 +6,15 @@ let adivinado = false;
 while (!adivinado && intento < intentos.length){
 
     if (intentos[intento]<numeroSecreto){
-        intento ++;
-        console.log(`Intento Nº${intento}: El numero es demasiado bajo`);
+        console.log(`Intento Nº${intento+1}: El numero es demasiado bajo`);
     }
-
+    
     if (intentos[intento]>numeroSecreto){
-        intento ++;
-        console.log(`Intento Nº${intento}: El numero es demasiado alto`);
+        console.log(`Intento Nº${intento+1}: El numero es demasiado alto`);
     } else if (intentos[intento]=== numeroSecreto){
         adivinado = true;
-        intento ++;
-        console.log(`Adivinaste en ${intento} intentos!`);
+        console.log(`Adivinaste en ${intento+1} intentos!`);
     }
+    intento ++;
 }
 
