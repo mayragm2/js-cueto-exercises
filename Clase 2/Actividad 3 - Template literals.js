@@ -8,13 +8,13 @@ const equipo = "Newells";
 console.log(`Hola, me llamo ${nombre} y tengo ${edad} años.`);
 
 // 2. Ciudad
-console.log(`Soy de &{ciudad}.`);
+console.log(`Soy de ${ciudad}.`);
 
 // 3. Expresión dentro del string
 console.log(`El doble de mi edad es  ${edad * 2}.`);
 
 // 4. Múltiples variables en una oración
-console.log(`Soy &{nombre} de ${ciudad} y sigo a ${equipo}.`);
+console.log(`Soy ${nombre} de ${ciudad} y sigo a ${equipo}.`);
 
 // 5. String de varias líneas
 console.log(`Nombre: ${nombre}
