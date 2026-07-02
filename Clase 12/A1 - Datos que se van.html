@@ -42,19 +42,31 @@
     const saludo = document.querySelector("#saludo");
     const btnGuardar = document.querySelector("#btn-guardar");
     const btnBorrar = document.querySelector("#btn-borrar");
+  
 
     // TODO 1: Al cargar la página, leer el nombre guardado y mostrar el saludo.
-
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!localStorage.getItem("nombre")){
+      saludo.textContent = (`Ingresá tu nombre.`);
+      } else{
+      localStorage.getItem("nombre");
+      saludo.textContent = (`Hola, ${localStorage.getItem("nombre")}`);
+      }
+    })
     // TODO 2: Al hacer click en Guardar, guardar el nombre en localStorage
     //         y actualizar el saludo.
     btnGuardar.addEventListener("click", () => {
-      // tu código acá
+      localStorage.setItem("nombre", inputNombre.value);
+      saludo.textContent = (`Hola, ${localStorage.getItem("nombre")}`);
     });
 
     // TODO 3: Al hacer click en Borrar, eliminar el nombre de localStorage
     //         y volver al texto por defecto.
     btnBorrar.addEventListener("click", () => {
       // tu código acá
+      localStorage.removeItem("nombre");
+      saludo.textContent = (`Ingresá tu nombre.`);
+
     });
   </script>
 </body>
