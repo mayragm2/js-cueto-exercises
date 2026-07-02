@@ -10,9 +10,9 @@ const jugador = {nombre:"Messi", pais:"Argentina", goles:8};
 const texto = JSON.stringify(jugador);
 
 console.log (texto);
-console.log (typeof texto);
+console.log (typeof texto); //String, ya que JSON.stringify lo convirtio a string
 
-console.log (texto.nombre);
+console.log (texto.nombre);// Undefined, ya que texto es un string, no un objeto
 
 objeto = JSON.parse(texto);
 
