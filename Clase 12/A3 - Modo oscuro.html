@@ -11,9 +11,6 @@
         background-color: #ffffff;
         color: #111111;
         padding: 2rem;
-        transition:
-          background-color 0.3s,
-          color 0.3s;
       }
 
       /* Tema oscuro: se activa cuando <body> tiene la clase "oscuro" */
@@ -43,41 +40,28 @@
 
       const esModoOscuro = tema === "oscuro"
 
-
       if (esModoOscuro){
         document.body.classList.add("oscuro");
-        //btn.textContent = "Activar modo claro";
+        btn.textContent = "Activar modo claro";
       } 
-      //else if (tema === "claro"){
-      //   document.body.classList.remove("oscuro");
-      //   btn.textContent = "Activar modo oscuro";
-      // } else {
-      //   localStorage.setItem("tema", "claro");
-      //   document.body.classList.remove("oscuro");
-      //   btn.textContent = "Activar modo oscuro";
-      // }
+      else {
+         document.body.classList.remove("oscuro");
+         btn.textContent = "Activar modo oscuro";
+       }
 
-      // TODO 1: al cargar la página, leer la preferencia guardada en localStorage
-      // (clave "tema"). Si vale "oscuro", agregar la clase "oscuro" al body
-      // y cambiar el texto del botón a "Activar modo claro".
-
-      // btn.addEventListener("click", () => {
-      //   tema = localStorage.getItem("tema");
-      //   console.log(tema);
-      //   if (tema === "claro") {
-      //     document.body.classList.add("oscuro");
-      //     btn.textContent = "Activar modo claro";
-      //     localStorage.setItem("tema", "oscuro");
-      //   } else {
-      //     console.log("es oscuro true");
-      //     document.body.classList.remove("oscuro");
-      //     btn.textContent = "Activar modo oscuro";
-      //     localStorage.setItem("tema", "claro");
-      //   }
-      //   // TODO 2: alternar la clase "oscuro" en document.body
-      //   // TODO 3: actualizar el texto del botón
-      //   // TODO 4: guardar la preferencia en localStorage
-      // });
+      btn.addEventListener("click", () => {
+        tema = localStorage.getItem("tema");
+        const esModoOscuro = tema === "oscuro"
+        if (!esModoOscuro) {
+          document.body.classList.add("oscuro");
+          btn.textContent = "Activar modo claro";
+          localStorage.setItem("tema", "oscuro");
+        } else {
+          document.body.classList.remove("oscuro");
+          btn.textContent = "Activar modo oscuro";
+          localStorage.setItem("tema", "claro");
+        }
+      });
     </script>
   </body>
 </html>
