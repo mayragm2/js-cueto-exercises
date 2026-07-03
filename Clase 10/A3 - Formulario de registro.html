@@ -105,30 +105,32 @@
                 if (nombre === ""){
                     spanErrorNombre.textContent = ("El nombre no puede estar vacio.");
                     nombreIsValid = false;
-                } else {
+                  } else {
                     nombreIsValid = true;
+                    spanErrorNombre.textContent = ("");
                 }
             }
             function validarEmail(){
                 if (email.includes("@")){
                     emailIsValid = true;
+                    spanErrorEmail.textContent = ("");
                 } else {
                     spanErrorEmail.textContent = ("El mail debe contener @");
                     emailIsValid = false;
+                    
                 }
             }
             function validarPassword(){
                 if (password.length >= 6){
                     passwordIsValid = true;
+                    spanErrorPassword.textContent   = ("");
+
                 } else {
                     spanErrorPassword.textContent = ("La contraseña debe tener más de 6 caracteres.")
                 }
             }
             if (passwordIsValid && emailIsValid && nombreIsValid){
-                    spanErrorNombre.textContent     = ("");
-                    spanErrorEmail.textContent      = ("");
-                    spanErrorPassword.textContent   = ("");
-                    spanSuccess.textContent         = (`Registro exitoso! Bienvenido/a, ${nombre}!`)
+                    spanSuccess.textContent = (`Registro exitoso! Bienvenido/a, ${nombre}!`)
             } else {
                     spanSuccess.textContent = (``)
             }
