@@ -103,19 +103,19 @@
             // --- Completar desde acá ---
             function validarNombre(){
                 if (nombre === ""){
-                    spanErrorNombre.textContent = ("El nombre no puede estar vacio.");
+                    spanErrorNombre.textContent = "El nombre no puede estar vacio.";
                     nombreIsValid = false;
                   } else {
                     nombreIsValid = true;
-                    spanErrorNombre.textContent = ("");
+                    spanErrorNombre.textContent = "";
                 }
             }
             function validarEmail(){
                 if (email.includes("@")){
                     emailIsValid = true;
-                    spanErrorEmail.textContent = ("");
+                    spanErrorEmail.textContent = "";
                 } else {
-                    spanErrorEmail.textContent = ("El mail debe contener @");
+                    spanErrorEmail.textContent = "El mail debe contener @";
                     emailIsValid = false;
                     
                 }
@@ -123,16 +123,16 @@
             function validarPassword(){
                 if (password.length >= 6){
                     passwordIsValid = true;
-                    spanErrorPassword.textContent   = ("");
+                    spanErrorPassword.textContent   = "";
 
                 } else {
-                    spanErrorPassword.textContent = ("La contraseña debe tener más de 6 caracteres.")
+                    spanErrorPassword.textContent = "La contraseña debe tener más de 6 caracteres.";
                 }
             }
             if (passwordIsValid && emailIsValid && nombreIsValid){
-                    spanSuccess.textContent = (`Registro exitoso! Bienvenido/a, ${nombre}!`)
+                    spanSuccess.textContent = `Registro exitoso! Bienvenido/a, ${nombre}!`;
             } else {
-                    spanSuccess.textContent = (``)
+                    spanSuccess.textContent = "";
             }
         });
         </script>
