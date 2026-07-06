@@ -96,10 +96,13 @@
           const liElement =  document.createElement("li");
           const buttonElement = document.createElement("button");
 
+          //guardar           
+          localStorage.setItem("tareas", JSON.stringify(tareas));
+
           //event listener
           buttonElement.addEventListener("click", () => {
             tareas = tareas.filter((tareaF) => tareaF !== tarea);
-            console.log (tareas);
+            renderizar ();
             
           })
 
@@ -108,7 +111,7 @@
 
           liElement.appendChild(buttonElement);
           lista.appendChild(liElement);
-        
+          
       });
     }
 
