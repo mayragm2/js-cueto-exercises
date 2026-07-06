@@ -66,7 +66,7 @@
     const carrito = [
       { nombre: "Remera",   precio: 1500, cantidad: 2 },
       { nombre: "Pantalón", precio: 3200, cantidad: 1 },
-      { nombre: "Medias",   precio: 400,  cantdad: 3 },  // <-- ¿lo ves?
+      { nombre: "Medias",   precio: 400,  cantidad: 3 },  // <-- la key del 3er valor tenia un nombre distinto al del resto
     ];
 
     // Calcula el total sumando precio × cantidad de cada item
@@ -85,14 +85,14 @@
     function renderizarCarrito(items) {
       const tbody = document.getElementById("filas-carrito");
 
-      for (const item of items) {
+      for (const item of items) { //cuando llegaba a la tercer iteracion de este bucle, subtotal intentaba leer item.cantidad, que devolvia undefined
         const subtotal = item.precio * item.cantidad;
         const fila = document.createElement("tr");
         fila.innerHTML = `
           <td>${item.nombre}</td>
           <td>$${item.precio.toLocaleString("es-AR")}</td>
-          <td>${item.cantidad}</td>
-          <td>$${(subtotal || 0).toLocaleString("es-AR")}</td>
+          <td>${item.cantidad}</td> <!--acá pasaba lo mismo, item.cantidad devolvia undefined en la tercer iteracion del bucle -->
+          <td>$${(subtotal || 0).toLocaleString("es-AR")}</td> <!-- subtotal devolvia not a number, ya que item.cantidad no tenia un valor numerico almacenado-->
         `;
         tbody.appendChild(fila);
       }
