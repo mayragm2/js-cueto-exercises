@@ -119,26 +119,25 @@
     function gol(equipo) {
       if (equipo === "argentina") {
         golesA += 1;
-        // BUG 1: el selector no coincide con el id del HTML
-        document.querySelector("#goles-argentina").textContent = golesA;
-      } else {
+    } else {
         golesF += 1;
-        document.querySelector("#golesFrancia").textContent = golesF;
-      }
-      mostrarResultado();
     }
+    mostrarResultado();
+}
 
-    function reiniciar() {
-      golesA = 0;
-      golesF = 0;
-      // BUG 2: se resetean las variables pero el DOM no se actualiza
-      document.getElementById("resultado").textContent = "El partido no empezó.";
-    }
+function reiniciar() {
+    golesA = 0;
+    golesF = 0;
+    mostrarResultado();
+    document.getElementById("resultado").textContent = "El partido no empezó.";
+}
 
-    function mostrarResultado() {
-      let mensaje;
-      // BUG 3: la condición usa = (asignación) en lugar de > (comparación)
-      if (golesA = golesF) {
+function mostrarResultado() {
+    let mensaje;
+    //the next two lines were moved from function gol() because mostrarResultado() had to show the state of golesA and golesF even when a goal wasn't scored.
+    document.querySelector("#golesArgentina").textContent = golesA; //querySelector is pointing at the wrong ID (goles-argentina instead of golesArgentina), so golesArgentina is not displaying the variable.
+    document.querySelector("#golesFrancia").textContent = golesF;
+      if (golesA === golesF) { // la condicion esta asignando en vez de comparando
         mensaje = "¡Empate! " + golesA + " – " + golesF;
       } else if (golesA > golesF) {
         mensaje = "Va ganando Argentina " + golesA + " – " + golesF;
