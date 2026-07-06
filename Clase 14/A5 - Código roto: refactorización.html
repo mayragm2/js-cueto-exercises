@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encuesta</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 480px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f9f9f9;
+    }
+    h1 { font-size: 1.3em; color: #333; }
+    .opcion {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .opcion button {
+      padding: 6px 14px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+    .opcion button:hover { background: #2980b9; }
+    .barra-contenedor {
+      flex: 1;
+    }
+    .etiqueta {
+      font-size: 0.85em;
+      color: #555;
+      margin-bottom: 4px;
+    }
+    .barra {
+      height: 12px;
+      background: #3498db;
+      border-radius: 6px;
+      transition: width 0.3s ease;
+      min-width: 2px;
+    }
+    .votos {
+      font-size: 0.85em;
+      color: #888;
+      white-space: nowrap;
+    }
+    #total-votos {
+      margin-top: 16px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>¿Cuál es tu lenguaje favorito?</h1>
+
+  <div class="opcion">
+    <button onclick="f(0)">Votar</button>
+    <div class="barra-contenedor">
+      <div class="etiqueta">JavaScript</div>
+      <div class="barra" id="b0" style="width: 0%"></div>
+    </div>
+    <div class="votos" id="r0">0 (0%)</div>
+  </div>
+
+  <div class="opcion">
+    <button onclick="f(1)">Votar</button>
+    <div class="barra-contenedor">
+      <div class="etiqueta">Python</div>
+      <div class="barra" id="b1" style="width: 0%"></div>
+    </div>
+    <div class="votos" id="r1">0 (0%)</div>
+  </div>
+
+  <div class="opcion">
+    <button onclick="f(2)">Votar</button>
+    <div class="barra-contenedor">
+      <div class="etiqueta">Java</div>
+      <div class="barra" id="b2" style="width: 0%"></div>
+    </div>
+    <div class="votos" id="r2">0 (0%)</div>
+  </div>
+
+  <div id="total-votos">Total de votos: 0</div>
+
+  <script>
+    // ESTE CÓDIGO FUNCIONA PERO ESTÁ MAL ESCRITO.
+    // Tu tarea: refactorizarlo sin cambiar el comportamiento.
+
+    var v = [0, 0, 0];
+
+    function f(i) {
+      v[i] = v[i] + 1;
+
+      var t = 0;
+      for (var j = 0; j < v.length; j++) {
+        t = t + v[j];
+      }
+
+      var p0 = t > 0 ? Math.round((v[0] / t) * 100) : 0;
+      var p1 = t > 0 ? Math.round((v[1] / t) * 100) : 0;
+      var p2 = t > 0 ? Math.round((v[2] / t) * 100) : 0;
+
+      document.getElementById("r0").textContent = v[0] + " (" + p0 + "%)";
+      document.getElementById("b0").style.width = p0 + "%";
+
+      document.getElementById("r1").textContent = v[1] + " (" + p1 + "%)";
+      document.getElementById("b1").style.width = p1 + "%";
+
+      document.getElementById("r2").textContent = v[2] + " (" + p2 + "%)";
+      document.getElementById("b2").style.width = p2 + "%";
+
+      document.getElementById("total-votos").textContent = "Total de votos: " + t;
+    }
+  </script>
+
+</body>
+</html>
